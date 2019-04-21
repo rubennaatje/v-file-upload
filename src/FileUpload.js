@@ -24,7 +24,7 @@ class FileUpload {
 
     // Start upload
     let formData = new FormData()
-    formData.append('file', file)
+    formData.append('image', file)
     Object.keys(additionalData).forEach(p => {
       formData.append(p, additionalData[p])
     })
