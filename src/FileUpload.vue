@@ -58,6 +58,7 @@ export default {
   },
   methods: {
     onChangeInputFile(e) {
+      console.log(e);
       let files = e.target.files || e.dataTransfer.files
       if (!files.length) return
       const file = files[0]
