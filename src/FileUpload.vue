@@ -80,6 +80,8 @@ export default {
       fileUpload
         .upload(file, this.additionalData)
         .then(e => {
+          console.log(e);
+          console.log(e.target.response);
           this.anexo = e.target.response
           this.onChangeAnexo()
           this.$emit('success', e)
