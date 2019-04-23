@@ -81,7 +81,6 @@ export default {
       fileUpload
         .upload(file, this.additionalData)
         .then(e => {
-          console.log(e);
           console.log(e.target.response);
           this.anexo = e.target.response
           this.onChangeAnexo()
@@ -183,12 +182,12 @@ export default {
       border-radius: 5px;
       margin: 5px;
       background-color: #cccccc;
-      height: 150px;
       width: 150px;
       padding: 0;
       position: relative;
 
       img {
+        max-width:100%;
         border-radius: 5px;
       }
     }
