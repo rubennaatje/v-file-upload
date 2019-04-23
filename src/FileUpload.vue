@@ -1,15 +1,22 @@
 <template>
   <div class="file-upload">
-      <div class="thumb-preview" v-if="thumbUrl(anexo)">
-          <div class="thumb-preview-item"><img :src="thumbUrl(anexo)" /></div>
-      </div>
-      <div class="input-wrapper" :style="inputWrapperStyle">
-        <input id="file-upload-input" type="file" name="file" @change="onChangeInputFile" :accept="accept" :multiple="false" :disabled="uploading" ref="input" /><label class="file-upload-label" for="file-upload-input">
-          <span class="file-upload-icon" :class="{'file-upload-icon-pulse': uploading}">&#x21EA;</span>
-          <div>{{ uploading ? btnUploadingLabel : btnLabel }}</div>
-      </label>
+    <v-layout justify-space-between row fill-height>
+      <v-flex md3>
+        <div class="thumb-preview" v-if="thumbUrl(anexo)">
+            <div class="thumb-preview-item"><img :src="thumbUrl(anexo)" /></div>
+        </div>
+      </v-flex>
+      <v-flex md9>
+        <div class="input-wrapper" :style="inputWrapperStyle">
+          <input id="file-upload-input" type="file" name="file" @change="onChangeInputFile" :accept="accept" :multiple="false" :disabled="uploading" ref="input" />
+          <label class="file-upload-label" for="file-upload-input">
+            <span class="file-upload-icon" :class="{'file-upload-icon-pulse': uploading}">&#x21EA;</span>
+            <div>{{ uploading ? btnUploadingLabel : btnLabel }}</div>
+          </label>
           <div class="file-upload-progress" :style="progressStyle"></div>
-      </div>
+        </div>
+      </v-flex>
+    </v-layout>
   </div>
 </template>
 
