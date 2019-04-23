@@ -1,14 +1,16 @@
-<template lang="pug">
-.file-upload
-  .thumb-preview(v-if='thumbUrl(anexo)')
-    .thumb-preview-item
-      img(:src='thumbUrl(anexo)')
-  .input-wrapper(:style='inputWrapperStyle')
-    input#file-upload-input(type='file', name='file', @change='onChangeInputFile', :accept='accept', :multiple='false', :disabled='uploading', ref='input')
-    label.file-upload-label(for='file-upload-input')
-      span.file-upload-icon(:class="{'file-upload-icon-pulse': uploading}") &#x21EA;
-      div {{ uploading ? btnUploadingLabel : btnLabel }}
-    div.file-upload-progress(:style='progressStyle')
+<template>
+  <div class="file-upload">
+      <div class="thumb-preview" v-if="thumbUrl(anexo)">
+          <div class="thumb-preview-item"><img :src="thumbUrl(anexo)" /></div>
+      </div>
+      <div class="input-wrapper" :style="inputWrapperStyle">
+        <input id="file-upload-input" type="file" name="file" @change="onChangeInputFile" :accept="accept" :multiple="false" :disabled="uploading" ref="input" /><label class="file-upload-label" for="file-upload-input">
+          <span class="file-upload-icon" :class="{'file-upload-icon-pulse': uploading}">&#x21EA;</span>
+          <div>{{ uploading ? btnUploadingLabel : btnLabel }}</div>
+      </label>
+          <div class="file-upload-progress" :style="progressStyle"></div>
+      </div>
+  </div>
 </template>
 
 <script>
