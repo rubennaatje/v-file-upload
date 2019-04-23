@@ -39,7 +39,8 @@ export default {
   data() {
     return {
       progress: 0,
-      anexo: {}
+      anexo: {},
+      imageLink: ""
     }
   },
   computed: {
@@ -87,6 +88,7 @@ export default {
           this.$emit('success', e)
           this.progress = 0
           this.cleanInput()
+          this.imageLink = e.target.response.data.link;
         })
         .catch(e => {
           this.$emit('error', e)

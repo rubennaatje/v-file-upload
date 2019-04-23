@@ -1,7 +1,7 @@
 <template lang="pug">
 div(style="text-align: center;")
   div.input-group
-    file-upload(url='https://postman-echo.com/post', :thumb-url='thumbUrl', @success="onSucess", @error="onError", :additional-data="additionalData")
+    file-upload(:url='url', :headers='headers' :thumb-url='thumbUrl', @success="onSucess", @error="onError", :additional-data="additionalData")
     .red {{error}}
 </template>
 
@@ -19,7 +19,9 @@ export default {
       error: '',
       additionalData: {
         doc_id: 1
-      }
+      },
+      url: 'https://api.imgur.com/3/image',
+      headers: {'Authorization': 'Client-ID 29254565fdbcf6a'},
     }
   },
   methods: {

@@ -29,7 +29,7 @@ class FileUpload {
       formData.append(p, additionalData[p])
     })
     xhr.send(formData)
-
+    
     return promise
   }
 
