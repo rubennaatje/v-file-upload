@@ -59,7 +59,6 @@ export default {
   },
   methods: {
     onChangeInputFile(e) {
-      console.log(e);
       let files = e.target.files || e.dataTransfer.files
       if (!files.length) return
       const file = files[0]
@@ -81,7 +80,6 @@ export default {
       fileUpload
         .upload(file, this.additionalData)
         .then(e => {
-          console.log(e.target.response);
           this.anexo = e.target.response
           this.onChangeAnexo()
           this.$emit('success', e)
