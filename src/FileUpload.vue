@@ -25,8 +25,8 @@ export default {
         return {}
       }
     },
-    btnLabel: { type: String, default: 'Select a file' },
-    btnUploadingLabel: { type: String, default: 'Uploading file' },
+    btnLabel: { type: String, default: 'Selecteer een bestand' },
+    btnUploadingLabel: { type: String, default: 'Bestand uploaden' },
     maxSize: { type: Number, default: 15728640 }, // 15Mb
     additionalData: {
       type: Object,
