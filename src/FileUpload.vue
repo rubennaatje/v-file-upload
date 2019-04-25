@@ -129,6 +129,10 @@ export default {
     position: relative;
     background-color: #307DBF;
     height: 80px;
+	max-width: 400px;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
 
     &:hover {
       background-color: #2C70AC;
@@ -188,13 +192,16 @@ export default {
     .thumb-preview-item {
       border-radius: 5px;
       margin: 5px auto;
-      width: 150px;
       padding: 0;
       position: relative;
 
       img {
-        max-width:100%;
-        border-radius: 5px;
+        display: block;
+		border-radius: 5px;
+		object-fit: contain;
+		height: 150px;
+		width: 100%;
+		margin: 0 auto;
       }
     }
   }
