@@ -1,12 +1,12 @@
 <template>
   <div class="file-upload">
     <v-layout justify-space-between row fill-height>
-      <v-flex md3>
+      <v-flex md6>
         <div class="thumb-preview" v-if="thumbUrl(anexo)">
             <div class="thumb-preview-item"><img :src="thumbUrl(anexo)" /></div>
         </div>
       </v-flex>
-      <v-flex md9>
+      <v-flex md6>
         <div class="input-wrapper" :style="inputWrapperStyle">
           <input id="file-upload-input" type="file" name="file" @change="onChangeInputFile" :accept="accept" :multiple="false" :disabled="uploading" ref="input" />
           <label class="file-upload-label" for="file-upload-input">
@@ -187,8 +187,7 @@ export default {
 
     .thumb-preview-item {
       border-radius: 5px;
-      margin: 5px;
-      background-color: #cccccc;
+      margin: 5px auto;
       width: 150px;
       padding: 0;
       position: relative;
